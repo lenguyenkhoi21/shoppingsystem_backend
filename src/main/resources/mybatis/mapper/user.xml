@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2021. By Le Nguyen Khoi All Rights Reserved.
+  ~ AdoptOpenJDK 11
+  ~ Spring Boot 2.5.1
+  ~ The Shopping System
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nguyenkhoi.project.shopping_system_be.common.mapper.UserMapper">
+    <select
+            id="authenticateUser"
+            resultType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.User">
+        <![CDATA[
+            SELECT
+                `phone` AS phone,
+                `password` AS password,
+                `role` AS role
+            FROM `Shopping_System`.`user`
+            WHERE `phone` = #{phone}
+        ]]>
+    </select>
+
+    <insert
+            id="insertUser"
+            parameterType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.User">
+        <![CDATA[
+            INSERT INTO `Shopping_System`.`user` (`name`, `email`, `phone`,  `password`, `avatar`)
+            VALUE (#{name}, #{email}, #{phone}, #{password}, #{avatar})
+        ]]>
+    </insert>
+</mapper>

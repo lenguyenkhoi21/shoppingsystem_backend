@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2021. By Le Nguyen Khoi All Rights Reserved.
+  ~ AdoptOpenJDK 11
+  ~ Spring Boot 2.5.1
+  ~ The Shopping System
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nguyenkhoi.project.shopping_system_be.common.mapper.BillDetailMapper">
+
+</mapper>

@@ -1,0 +1,46 @@
+server:
+  port: 7070
+
+springdoc:
+  show-login-endpoint: true
+
+spring:
+  profiles:
+    active: development
+  data:
+    mongodb:
+      username: spring
+      password: spring
+      host: localhost
+      port: 27017
+      database: SpringMGDB
+  datasource:
+    url: jdbc:mysql://localhost:3306/Shopping_System
+    username: root
+    password: LeNguyenKhoi21
+
+mybatis:
+  mapper-locations: mybatis/mapper/**
+
+logging:
+  level:
+    nguyenkhoi:
+      project:
+        shopping_system_be:
+          common:
+            repository:
+              mybatis: trace
+    org:
+      springframework:
+        jdbc:
+          datasource:
+            DataSourceTransactionManager: trace
+        transaction: trace
+      mybatis:
+        spring:
+          transaction: trace
+
+app:
+  auth:
+    tokenSecret: LeNguyenKhoi21926D96C90030DD58429D2751AC1BDBBC
+    tokenExpirationMsec: 864000000

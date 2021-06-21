@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2021. By Le Nguyen Khoi All Rights Reserved.
+  ~ AdoptOpenJDK 11
+  ~ Spring Boot 2.5.1
+  ~ The Shopping System
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nguyenkhoi.project.shopping_system_be.common.mapper.ProductMapper">
+    <select
+            id="selectAllProduct"
+            resultType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.Product">
+        <![CDATA[
+            SELECT
+                `product_id` AS product_id,
+                `name` AS name,
+                `image` AS image,
+                `description` AS description,
+                `price` AS price,
+                `status` AS status
+            FROM `shopping_system`.`product`;
+        ]]>
+    </select>
+
+    <insert
+            id="insertInit"
+            parameterType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.Product">
+        <![CDATA[
+            INSERT INTO `Shopping_System`.`product` (`name`, `image`, `description`, `price`, `status`)
+            VALUE (#{name}, #{image}, #{description}, #{price}, #{status})
+        ]]>
+    </insert>
+</mapper>
+
