@@ -7,6 +7,7 @@
 
 package nguyenkhoi.project.shopping_system_be.api.payment;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -21,6 +22,7 @@ public class PaymentController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('USER')")
     public POSTPaymentResponse payment(@Valid @RequestBody POSTPaymentPayload payload) {
         return paymentService.payment(payload);
     }
