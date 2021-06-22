@@ -7,5 +7,21 @@
 
 package nguyenkhoi.project.shopping_system_be.api.payment;
 
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
+@RestController
+@RequestMapping("/api/payment")
 public class PaymentController {
+    private final PaymentService paymentService;
+
+    public PaymentController(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+
+    @PostMapping
+    public POSTPaymentResponse payment(@Valid @RequestBody POSTPaymentPayload payload) {
+        return paymentService.payment(payload);
+    }
 }

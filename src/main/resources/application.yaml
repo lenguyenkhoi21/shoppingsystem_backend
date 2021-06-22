@@ -17,7 +17,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/Shopping_System
     username: root
-    password: LeNguyenKhoi21
+    password: salahe123
 
 mybatis:
   mapper-locations: mybatis/mapper/**

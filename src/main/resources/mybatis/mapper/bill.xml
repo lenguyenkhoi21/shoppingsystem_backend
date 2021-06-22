@@ -10,5 +10,22 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="nguyenkhoi.project.shopping_system_be.common.mapper.BillMapper">
+    <insert id="insertBill"
+            parameterType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.Bill">
+        <![CDATA[
+            INSERT INTO `Shopping_System`.`bill`(`phone`, `total`)
+            VALUE (#{phone}, #{total})
+        ]]>
+    </insert>
 
+    <select id="selectLastInsertBillByPhone"
+            resultType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.Bill">
+        <![CDATA[
+            SELECT
+                `bill_id` AS bill_id
+            FROM `Shopping_System`.`bill`
+            WHERE `phone` = #{phone}
+            ORDER BY `bill_id` DESC LIMIT 1
+        ]]>
+    </select>
 </mapper>

@@ -22,4 +22,5 @@ public class Bill {
     private long bill_id;
     private String phone;
     private Timestamp time;
+    private int total;
 }
