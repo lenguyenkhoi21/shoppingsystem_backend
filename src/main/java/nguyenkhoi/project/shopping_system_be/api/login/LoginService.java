@@ -44,6 +44,7 @@ public class LoginService {
         return POSTLoginResponse
                 .builder()
                 .message(Constant.msgSuccess)
+                .phone(payload.getPhone())
                 .token(token)
                 .build();
     }
