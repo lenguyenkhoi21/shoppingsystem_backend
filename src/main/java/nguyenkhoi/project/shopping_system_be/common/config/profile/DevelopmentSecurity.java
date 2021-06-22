@@ -116,6 +116,8 @@ public class DevelopmentSecurity extends WebSecurityConfigurerAdapter {
                         .permitAll()
                     .antMatchers("/api/init")
                         .permitAll()
+                    .antMatchers("/api/fetch")
+                        .permitAll()
                 .anyRequest()
                     .authenticated();
 
