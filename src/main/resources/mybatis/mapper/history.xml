@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nguyenkhoi.project.shopping_system_be.api.history.HistoryMapper">
+    <select id="selectUserHistoryDetails"
+        resultType="nguyenkhoi.project.shopping_system_be.api.history.HistoryModel">
+        <![CDATA[
+            SELECT
+                `Shopping_System`.`product`.`name`,
+                `Shopping_System`.`product`.`price`,
+                `Shopping_System`.`bill_details`.`count`
+            FROM
+                `Shopping_System`.`product`
+                INNER JOIN `Shopping_System`.`bill_details`
+                ON `Shopping_System`.`product`.`product_id` = `Shopping_System`.`bill_details`.`product_id`
+            WHERE
+                `Shopping_System`.`bill_details`.`bill_id` = #{bill_id}
+        ]]>
+    </select>
+</mapper>
+

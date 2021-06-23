@@ -31,4 +31,28 @@
             VALUE (#{name}, #{email}, #{phone}, #{password}, #{avatar})
         ]]>
     </insert>
+
+    <select
+        id="selectUserProfile"
+        resultType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.User">
+        <![CDATA[
+            SELECT
+                `name` AS name,
+                `email` AS email,
+                `avatar` AS avatar
+            FROM `Shopping_System`.`user`
+            WHERE `phone` = #{phone}
+        ]]>
+    </select>
+
+    <update
+        id="updateProfile"
+        parameterType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.User">
+        <![CDATA[
+            UPDATE `Shopping_System`.`user` SET
+                `email` = #{email},
+                `name` = #{name}
+            WHERE `phone` = #{phone}
+        ]]>
+    </update>
 </mapper>

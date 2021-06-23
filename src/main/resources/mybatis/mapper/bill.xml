@@ -28,4 +28,16 @@
             ORDER BY `bill_id` DESC LIMIT 1
         ]]>
     </select>
+
+    <select id="selectAllBillByPhone"
+            resultType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.Bill">
+         <![CDATA[
+            SELECT
+                `bill_id` AS bill_id,
+                `time` AS time,
+                `total` AS total
+            FROM `Shopping_System`.`bill`
+            WHERE `phone` = #{phone}
+        ]]>
+    </select>
 </mapper>

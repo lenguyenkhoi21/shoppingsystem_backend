@@ -7,6 +7,8 @@
 
 package nguyenkhoi.project.shopping_system_be.api.payment;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +25,7 @@ public class PaymentController {
 
     @PostMapping
     @PreAuthorize("hasRole('USER')")
+    @Operation(security = { @SecurityRequirement(name = "bearer-key") })
     public POSTPaymentResponse payment(@Valid @RequestBody POSTPaymentPayload payload) {
         return paymentService.payment(payload);
     }
