@@ -7,7 +7,6 @@
 
 package nguyenkhoi.project.shopping_system_be.common.security;
 
-
 import io.jsonwebtoken.*;
 import nguyenkhoi.project.shopping_system_be.common.config.AppProperties;
 import org.slf4j.Logger;
@@ -50,7 +49,7 @@ public class JwtTokenProvider {
         return claims.getSubject();
     }
 
-    public boolean validateToken(String authToken) throws SignatureException {
+    public boolean validateToken(String authToken) {
         try {
             Jwts.parser().setSigningKey(properties.getAuth().getTokenSecret()).parseClaimsJws(authToken);
             return true;

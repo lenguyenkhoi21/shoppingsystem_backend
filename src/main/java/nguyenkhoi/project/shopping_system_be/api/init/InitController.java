@@ -112,17 +112,15 @@ public class InitController {
 
         productMapper.selectAllProduct()
                      .stream()
-                     .map(product -> {
-                         return ProductMG
-                                 .builder()
-                                 .product_id(product.getProduct_id())
-                                 .name(product.getName())
-                                 .image(product.getImage())
-                                 .description(product.getDescription())
-                                 .price(product.getPrice())
-                                 .status(product.isStatus())
-                                 .build();
-                     })
+                     .map(product -> ProductMG
+                             .builder()
+                             .product_id(product.getProduct_id())
+                             .name(product.getName())
+                             .image(product.getImage())
+                             .description(product.getDescription())
+                             .price(product.getPrice())
+                             .status(product.isStatus())
+                             .build())
                      .collect(Collectors.toList())
                      .forEach(productMGRepo::save);
 

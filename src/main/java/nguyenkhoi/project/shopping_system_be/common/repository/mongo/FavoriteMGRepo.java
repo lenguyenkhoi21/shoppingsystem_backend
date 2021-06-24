@@ -7,9 +7,8 @@
 
 package nguyenkhoi.project.shopping_system_be.common.repository.mongo;
 
-import nguyenkhoi.project.shopping_system_be.common.model.mongo.FavoriteMG;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CartMGRepo extends MongoRepository<FavoriteMG, String> {
+public interface FavoriteMGRepo extends MongoRepository<nguyenkhoi.project.shopping_system_be.common.model.mongo.FavoriteMG, String> {
 
 }

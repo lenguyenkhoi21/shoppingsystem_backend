@@ -8,9 +8,8 @@
 package nguyenkhoi.project.shopping_system_be.api.signup;
 
 import nguyenkhoi.project.shopping_system_be.common.mapper.UserMapper;
-import nguyenkhoi.project.shopping_system_be.common.model.mongo.FavoriteMG;
 import nguyenkhoi.project.shopping_system_be.common.model.mybatis.User;
-import nguyenkhoi.project.shopping_system_be.common.repository.mongo.CartMGRepo;
+import nguyenkhoi.project.shopping_system_be.common.repository.mongo.FavoriteMGRepo;
 import nguyenkhoi.project.shopping_system_be.common.repository.mongo.ProductMGRepo;
 import nguyenkhoi.project.shopping_system_be.common.util.Constant;
 import nguyenkhoi.project.shopping_system_be.common.util.ResourceFile;
@@ -23,16 +22,16 @@ import org.springframework.transaction.annotation.Transactional;
 public class SignupService {
     private final UserMapper userMapper;
     private final PasswordEncoder encoder;
-    private final CartMGRepo cartMGRepo;
+    private final FavoriteMGRepo favoriteMGRepo;
     private final ProductMGRepo productMGRepo;
 
     public SignupService(UserMapper userMapper,
                          PasswordEncoder encoder,
-                         CartMGRepo cartMGRepo,
+                         FavoriteMGRepo favoriteMGRepo,
                          ProductMGRepo productMGRepo) {
         this.userMapper = userMapper;
         this.encoder = encoder;
-        this.cartMGRepo = cartMGRepo;
+        this.favoriteMGRepo = favoriteMGRepo;
         this.productMGRepo = productMGRepo;
     }
 
@@ -51,16 +50,14 @@ public class SignupService {
 
 
             productMGRepo.findAll()
-                         .forEach(productMG -> {
-                             cartMGRepo.save(FavoriteMG
-                                     .builder()
-                                     .phone(user.getPhone())
-                                     .product_id(productMG.getProduct_id())
-                                     .product_name(productMG.getName())
-                                     .product_image(productMG.getImage())
-                                     .like(false)
-                                     .build());
-                         });
+                         .forEach(productMG -> favoriteMGRepo.save(nguyenkhoi.project.shopping_system_be.common.model.mongo.FavoriteMG
+                                 .builder()
+                                 .phone(user.getPhone())
+                                 .product_id(productMG.getProduct_id())
+                                 .product_name(productMG.getName())
+                                 .product_image(productMG.getImage())
+                                 .like(false)
+                                 .build()));
 
 
 
