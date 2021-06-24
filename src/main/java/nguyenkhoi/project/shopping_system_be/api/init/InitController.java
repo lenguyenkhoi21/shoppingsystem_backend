@@ -103,18 +103,18 @@ public class InitController {
                 .build();
 
         int res1 = productMapper.insertInit(product1);
-        int res2 =productMapper.insertInit(product2);
-        int res3 =productMapper.insertInit(product3);
-        int res4 =productMapper.insertInit(product4);
-        int res5 =productMapper.insertInit(product5);
-        int res6 =productMapper.insertInit(product6);
-        int res7 =productMapper.insertInit(product7);
+        int res2 = productMapper.insertInit(product2);
+        int res3 = productMapper.insertInit(product3);
+        int res4 = productMapper.insertInit(product4);
+        int res5 = productMapper.insertInit(product5);
+        int res6 = productMapper.insertInit(product6);
+        int res7 = productMapper.insertInit(product7);
 
         productMapper.selectAllProduct()
                      .stream()
                      .map(product -> ProductMG
                              .builder()
-                             .product_id(product.getProduct_id())
+                             .productId(product.getProduct_id())
                              .name(product.getName())
                              .image(product.getImage())
                              .description(product.getDescription())

@@ -53,10 +53,10 @@ public class SignupService {
                          .forEach(productMG -> favoriteMGRepo.save(nguyenkhoi.project.shopping_system_be.common.model.mongo.FavoriteMG
                                  .builder()
                                  .phone(user.getPhone())
-                                 .product_id(productMG.getProduct_id())
-                                 .product_name(productMG.getName())
-                                 .product_image(productMG.getImage())
-                                 .like(false)
+                                 .productId(productMG.getProductId())
+                                 .productName(productMG.getName())
+                                 .productImage(productMG.getImage())
+                                 .love(false)
                                  .build()));
 
 

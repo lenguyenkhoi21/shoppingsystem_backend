@@ -22,7 +22,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProductMG {
     @Id
     private String id;
-    private long product_id;
+    private long productId;
     private String name;
     private String image;
     private String description;

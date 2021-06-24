@@ -27,7 +27,7 @@ public class GETFetchService {
                 .stream()
                 .map(productMG -> FetchPOJO
                         .builder()
-                        .product_id(productMG.getProduct_id())
+                        .product_id(productMG.getProductId())
                         .name(productMG.getName())
                         .image(productMG.getImage())
                         .description(productMG.getDescription())
