@@ -102,6 +102,8 @@ public class ProductionSecurity extends WebSecurityConfigurerAdapter {
                         .denyAll()
                     .antMatchers("/v3/api-docs/**")
                         .denyAll()
+                    .antMatchers("/api/search/**")
+                        .permitAll()
                 .anyRequest()
                     .authenticated();
 
