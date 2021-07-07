@@ -28,8 +28,7 @@ logging:
       project:
         shopping_system_be:
           common:
-            repository:
-              mybatis: trace
+            mapper: trace
     org:
       springframework:
         jdbc:
