@@ -86,7 +86,7 @@ public class ProductionSecurity extends WebSecurityConfigurerAdapter {
                         .permitAll()
                     .antMatchers("/api/login")
                         .permitAll()
-                    .antMatchers("/api/fetch")
+                    .antMatchers("/api/fetch/**")
                         .permitAll()
                     .antMatchers("/api/init")
                         .denyAll()

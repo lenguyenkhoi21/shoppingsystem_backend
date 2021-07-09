@@ -37,22 +37,21 @@ public class HistoryService {
                         .build())
                 .collect(Collectors.toList());
 
-        historyPOJOS.forEach(historyPOJO -> {
-            historyPOJO.setDetail(
-                    historyMapper.selectUserHistoryDetails(HistoryModel
-                    .builder()
-                    .bill_id(historyPOJO.getBill_id())
-                    .build())
-                    .stream()
-                    .map(model -> DetailPOJO
-                            .builder()
-                            .product_name(model.getName())
-                            .count(model.getCount())
-                            .sum(model.getCount() * model.getPrice())
-                            .build())
-                    .collect(Collectors.toList())
-            );
-        });
+        historyPOJOS.forEach(historyPOJO -> historyPOJO.setDetail(
+                historyMapper.selectUserHistoryDetails(HistoryModel
+                .builder()
+                .bill_id(historyPOJO.getBill_id())
+                .build())
+                .stream()
+                .map(model -> DetailPOJO
+                        .builder()
+                        .product_name(model.getName())
+                        .count(model.getCount())
+                        .sum(model.getCount() * model.getPrice())
+                        .price(model.getPrice())
+                        .build())
+                .collect(Collectors.toList())
+        ));
 
         return GETHistoryResponse
                 .builder()

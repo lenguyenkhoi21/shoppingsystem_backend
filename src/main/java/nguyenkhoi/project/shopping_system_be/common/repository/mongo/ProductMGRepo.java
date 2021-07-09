@@ -16,4 +16,5 @@ import java.util.List;
 @Repository
 public interface ProductMGRepo extends MongoRepository<ProductMG, String> {
     List<ProductMG> findAllByNameLike(String name);
+    ProductMG findByProductId(long productId);
 }

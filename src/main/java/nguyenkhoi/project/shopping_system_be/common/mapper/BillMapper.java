@@ -17,4 +17,5 @@ public interface BillMapper {
     int insertBill(Bill bill);
     Bill selectLastInsertBillByPhone(Bill bill);
     List<Bill> selectAllBillByPhone(Bill bill);
+    Bill selectBillById(long bill);
 }
