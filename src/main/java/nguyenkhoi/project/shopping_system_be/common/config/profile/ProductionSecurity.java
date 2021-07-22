@@ -86,6 +86,8 @@ public class ProductionSecurity extends WebSecurityConfigurerAdapter {
                         .permitAll()
                     .antMatchers("/api/login")
                         .permitAll()
+                    .antMatchers("/api/fetch/**")
+                        .permitAll()
                     .antMatchers("/api/init")
                         .denyAll()
                     .antMatchers("/swagger-ui.html/**",
@@ -100,6 +102,8 @@ public class ProductionSecurity extends WebSecurityConfigurerAdapter {
                         .denyAll()
                     .antMatchers("/v3/api-docs/**")
                         .denyAll()
+                    .antMatchers("/api/search/**")
+                        .permitAll()
                 .anyRequest()
                     .authenticated();
 

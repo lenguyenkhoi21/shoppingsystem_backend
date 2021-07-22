@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/login")
 public class LoginController {
@@ -23,7 +25,7 @@ public class LoginController {
     }
 
     @PostMapping
-    public POSTLoginResponse login(@RequestBody POSTLoginPayload payload) {
+    public POSTLoginResponse login(@Valid @RequestBody POSTLoginPayload payload) {
         return loginService.login(payload);
     }
 

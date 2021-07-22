@@ -11,7 +11,10 @@ import nguyenkhoi.project.shopping_system_be.common.model.mongo.ProductMG;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ProductMGRepo extends MongoRepository<ProductMG, String> {
-
+    List<ProductMG> findAllByNameLike(String name);
+    ProductMG findByProductId(long productId);
 }

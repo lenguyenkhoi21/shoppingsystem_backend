@@ -10,5 +10,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="nguyenkhoi.project.shopping_system_be.common.mapper.BillDetailMapper">
-
+    <insert id="insertBillDetail"
+            parameterType="nguyenkhoi.project.shopping_system_be.common.model.mybatis.Bill_Details">
+        <![CDATA[
+            INSERT INTO `Shopping_System`.`bill_details`(`bill_id`, `product_id`, `count`)
+            VALUE (#{bill_id}, #{product_id}, #{count})
+        ]]>
+    </insert>
 </mapper>

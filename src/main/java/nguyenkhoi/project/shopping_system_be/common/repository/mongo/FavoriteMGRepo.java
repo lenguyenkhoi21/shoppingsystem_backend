@@ -10,6 +10,9 @@ package nguyenkhoi.project.shopping_system_be.common.repository.mongo;
 import nguyenkhoi.project.shopping_system_be.common.model.mongo.FavoriteMG;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CartMGRepo extends MongoRepository<FavoriteMG, String> {
+import java.util.List;
 
+public interface FavoriteMGRepo extends MongoRepository<FavoriteMG, String> {
+    List<FavoriteMG> findAllByPhoneAndLove(String phone, boolean love);
+    FavoriteMG findByProductIdAndPhone(long productId, String phone);
 }

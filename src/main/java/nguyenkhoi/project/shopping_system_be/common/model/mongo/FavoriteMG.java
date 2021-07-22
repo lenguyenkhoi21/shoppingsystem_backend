@@ -7,24 +7,22 @@
 
 package nguyenkhoi.project.shopping_system_be.common.model.mongo;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Builder
 @Document
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class FavoriteMG {
     @Id
     private String id;
     private String phone;
-    private long product_id;
-    private String product_name;
-    private String product_image;
-    private boolean like;
+    private long productId;
+    private String productName;
+    private String productImage;
+    private boolean love;
 }

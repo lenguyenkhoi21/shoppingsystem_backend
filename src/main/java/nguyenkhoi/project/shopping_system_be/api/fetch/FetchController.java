@@ -7,5 +7,33 @@
 
 package nguyenkhoi.project.shopping_system_be.api.fetch;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/fetch")
 public class FetchController {
+
+    private final GETFetchService getFetchService;
+
+    public FetchController(GETFetchService getFetchService) {
+        this.getFetchService = getFetchService;
+    }
+
+    @GetMapping
+    public GETFetchResponse fetchData() {
+        return getFetchService.getAllProduct();
+    }
+
+    @GetMapping("/{id}")
+    public GETProductResponse getProductById(@PathVariable long id) {
+        return getFetchService.getProductById(id);
+    }
+
+    @GetMapping("/number")
+    public GETTotalProductResponse getTotal() {
+        return getFetchService.getTotalProduct();
+    }
 }

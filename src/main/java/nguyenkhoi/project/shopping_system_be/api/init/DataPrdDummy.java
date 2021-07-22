@@ -36,7 +36,7 @@ public class DataPrdDummy {
     private int price4 = 24000;
     private boolean status4 = true;
 
-    private String name5 = "Nước dưa chanh dây ép";
+    private String name5 = "Nước chanh dây ép";
     private String image5;
     private String description5;
     private int price5 = 23000;
@@ -55,59 +55,59 @@ public class DataPrdDummy {
     private boolean status7 = true;
 
     public String getImage1() throws IOException {
-        return ResourceFile.getProductImage();
+        return ResourceFile.getImage1();
     }
 
     public String getImage2() throws IOException {
-        return ResourceFile.getProductImage();
+        return ResourceFile.getImage2();
     }
 
     public String getImage3() throws IOException {
-        return ResourceFile.getProductImage();
+        return ResourceFile.getImage3();
     }
 
     public String getImage4() throws IOException {
-        return ResourceFile.getProductImage();
+        return ResourceFile.getImage4();
     }
 
     public String getImage5() throws IOException {
-        return ResourceFile.getProductImage();
+        return ResourceFile.getImage5();
     }
 
     public String getImage6() throws IOException {
-        return ResourceFile.getProductImage();
+        return ResourceFile.getImage6();
     }
 
     public String getImage7() throws IOException {
-        return ResourceFile.getProductImage();
+        return ResourceFile.getImage7();
     }
 
     public String getDescription1() throws IOException {
-        return ResourceFile.getLoremipsum();
+        return ResourceFile.getDes1();
     }
 
     public String getDescription2() throws IOException {
-        return ResourceFile.getLoremipsum();
+        return ResourceFile.getDes2();
     }
 
     public String getDescription3() throws IOException {
-        return ResourceFile.getLoremipsum();
+        return ResourceFile.getDes3();
     }
 
     public String getDescription4() throws IOException {
-        return ResourceFile.getLoremipsum();
+        return ResourceFile.getDes4();
     }
 
     public String getDescription5() throws IOException {
-        return ResourceFile.getLoremipsum();
+        return ResourceFile.getDes5();
     }
 
     public String getDescription6() throws IOException {
-        return ResourceFile.getLoremipsum();
+        return ResourceFile.getDes6();
     }
 
     public String getDescription7() throws IOException {
-        return ResourceFile.getLoremipsum();
+        return ResourceFile.getDes7();
     }
 
     public String getName1() {

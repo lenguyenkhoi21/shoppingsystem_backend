@@ -18,5 +18,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class POSTLoginResponse {
     private String message;
+    private String phone;
     private String token;
 }
